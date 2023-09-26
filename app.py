@@ -1,5 +1,6 @@
-from flask import Flask, send_from_directory,request,render_template
+from flask import Flask, send_from_directory, request, render_template
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
@@ -39,7 +40,8 @@ def plot():
 
     # Encode the plot image as base64
     plot_base64 = base64.b64encode(plot_img.read()).decode('utf-8')
-    
-    return render_template('./templates/plot.html', plot_base64=plot_base64)
+
+    return render_template('plot.html', plot_base64=plot_base64)
+
 if __name__ == '__main__':
     app.run(debug=True)
