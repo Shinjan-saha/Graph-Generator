@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return send_from_directory('', 'index.html')
+    return render_template('index.html')
 
 @app.route('/plot', methods=['POST'])
 def plot():
