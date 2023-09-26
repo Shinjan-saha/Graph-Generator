@@ -40,6 +40,6 @@ def plot():
     # Encode the plot image as base64
     plot_base64 = base64.b64encode(plot_img.read()).decode('utf-8')
     
-    return render_template('plot.html', plot_base64=plot_base64)
+    return render_template('./templates/plot.html', plot_base64=plot_base64)
 if __name__ == '__main__':
     app.run(debug=True)
